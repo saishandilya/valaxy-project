@@ -70,9 +70,9 @@ resource "aws_instance" "ansible" {
       "sudo chmod 400 /opt/${var.key_name_value}.pem",
       "export ANSIBLE_HOST_KEY_CHECKING=False",
       "ansible all -i /opt/ansible-hosts -m ping",
-      "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-master-setup.yaml --check",
+      # "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-master-setup.yaml --check",
       "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-master-setup.yaml",
-      "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-slave-setup.yaml --check",
+      # "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-slave-setup.yaml --check",
       "ansible-playbook -i /opt/ansible-hosts /opt/jenkins-slave-setup.yaml"
     ]
   }
