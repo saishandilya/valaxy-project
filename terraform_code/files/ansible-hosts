@@ -1,0 +1,15 @@
+####### Replace $values with actual values ##################
+
+[jenkins-master]
+${aws_instance.jenkins-master.private_ip}
+
+[jenkins-master:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/${var.key_name_value}.pem
+
+[jenkins-slave]
+${aws_instance.jenkins-slave.private_ip}
+
+[jenkins-slave:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=/opt/${var.key_name_value}.pem
